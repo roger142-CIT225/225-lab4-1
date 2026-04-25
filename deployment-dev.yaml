@@ -10,7 +10,7 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path:  /srv/nfs/roseaw         #local reference change this!!!!
+    path:  /srv/nfs/roger142-225-sp26         #local reference change this!!!!
     server: 10.48.228.25    #don't change this IP address.  This references the NFS server!
   persistentVolumeReclaimPolicy: Retain
 ---
@@ -46,7 +46,8 @@ spec:
     spec:
       containers:
         - name: flask
-          image: cithit/roseaw:latest   #<------change this!!!!!
+          image: cithit/roger142:latest   #<------change this!!!!!
+          imagePullPolicy: Always
           ports:
             - containerPort: 5000
           volumeMounts:
